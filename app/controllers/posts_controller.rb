@@ -19,6 +19,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+    redirect_to posts_path, notice: "Update Success"
+  else
+    render :edit
+  end
+  end
 
   private
 
